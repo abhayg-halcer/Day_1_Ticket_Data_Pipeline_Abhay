@@ -1,0 +1,25 @@
+ticket_id,category,priority,description,resolution_time_hours,customer_rating,status
+T001,Billing,High,Incorrect invoice,4.5,4,Resolved
+T002,Technical,Critical,Application crash,8.0,2,Resolved
+T003,Account,Low,Password reset,1.0,5,Resolved
+T004,Billing,Medium,Refund delay,12.0,3,Open
+T005,Technical,High,Login failure,6.5,2,Resolved
+T006,Account,Medium,Email change,2.0,5,Resolved
+T007,Billing,Low,Invoice copy,1.5,4,Resolved
+T008,Technical,Critical,Server unavailable,18.0,1,Open
+T009,Account,High,Account locked,3.0,3,Resolved
+T010,Billing,Medium,Payment failure,7.0,4,Resolved
+T011,Technical,Low,Slow loading,5.0,3,Open
+T012,Account,High,Verification issue,4.0,4,Resolved
+T013,Billing,High,Duplicate charge,9.0,2,Resolved
+T014,Technical,Medium,API error,6.0,3,Resolved
+T015,Account,Low,Profile update,2.5,5,Resolved
+T016,Billing,High,Missing invoice,invalid,2,Open
+T017,Technical,Medium,Feature not working,8.5,,Resolved
+T018,Account,Low,Notification issue,,4,Open
+T019,Billing,Medium,,3.5,3,Resolved
+T020,Technical,High,Data synchronization,10.0,6,Resolved
+T021,Billing,High,Incorrect invoice,4.5,4,Resolved
+T021,Technical,Low,Duplicate ticket ID,2.0,5,Resolved
+T023,,Medium,Category missing,3.0,3,Resolved
+T024,Account,Urgent,Unrecognized priority,2.0,4,Resolved

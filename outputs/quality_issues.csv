@@ -1,0 +1,9 @@
+source_row_index,ticket_id,issue,action
+22,T023,missing_category,retain and flag
+18,T019,missing_description,retain and flag
+17,T018,missing_resolution_time,retain and flag
+16,T017,missing_customer_rating,retain and flag
+21,T021,duplicate_ticket_id_dropped,drop later duplicate; keep first
+15,T016,invalid_resolution_time,replace invalid numeric value with NaN and flag
+19,T020,invalid_customer_rating,replace invalid numeric value with NaN and flag
+23,T024,unrecognized_priority,retain and flag

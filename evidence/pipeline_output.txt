@@ -1,0 +1,64 @@
+=== Data Quality ===
+raw_row_count: 24
+cleaned_row_count: 23
+duplicate_ids: ['T021']
+duplicate_row_count: 1
+missing_ticket_id_count: 0
+invalid_resolution_time_count: 1
+invalid_customer_rating_count: 1
+unrecognized_priorities: ['Urgent']
+unrecognized_statuses: []
+raw_missing_values_by_column: {'ticket_id': 0, 'category': 1, 'priority': 0, 'description': 1, 'resolution_time_hours': 1, 'customer_rating': 1, 'status': 0}
+cleaned_missing_values_by_column: {'ticket_id': 0, 'category': 1, 'priority': 0, 'description': 1, 'resolution_time_hours': 2, 'customer_rating': 2, 'status': 0}
+row_level_issue_count: 8
+duplicate_policy: Keep first occurrence of each non-empty ticket_id; drop later duplicates.
+missing_id_policy: Retain rows with missing IDs and flag them for investigation.
+
+=== Row-Level Quality Issues ===
+ source_row_index ticket_id                       issue                                          action
+               22      T023            missing_category                                 retain and flag
+               18      T019         missing_description                                 retain and flag
+               17      T018     missing_resolution_time                                 retain and flag
+               16      T017     missing_customer_rating                                 retain and flag
+               21      T021 duplicate_ticket_id_dropped                drop later duplicate; keep first
+               15      T016     invalid_resolution_time replace invalid numeric value with NaN and flag
+               19      T020     invalid_customer_rating replace invalid numeric value with NaN and flag
+               23      T024       unrecognized_priority                                 retain and flag
+
+=== Summary Metrics ===
+total_tickets: 23
+average_resolution_time_hours: 5.79
+average_customer_rating: 3.33
+open_tickets: 5
+unresolved_tickets: 5
+missing_resolution_times: 2
+missing_customer_ratings: 2
+
+=== Tickets by Category ===
+ category  ticket_count
+  Account             7
+  Billing             8
+  Missing             1
+Technical             7
+
+=== Average Resolution Time by Category ===
+ category  average_resolution_time_hours
+  Account                           2.42
+  Billing                           6.00
+  Missing                           3.00
+Technical                           8.86
+
+=== Tickets by Priority ===
+priority  ticket_count
+Critical             2
+    High             8
+     Low             5
+  Medium             7
+  Urgent             1
+
+=== Tickets by Status ===
+  status  ticket_count
+    Open             5
+Resolved            18
+
+Analytics and quality reports saved to: /Users/apple/Downloads/Day_1_Ticket_Data_Pipeline_RESUBMISSION/outputs

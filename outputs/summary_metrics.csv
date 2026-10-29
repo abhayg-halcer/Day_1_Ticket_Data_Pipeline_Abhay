@@ -1,0 +1,8 @@
+metric,value
+total_tickets,23.0
+average_resolution_time_hours,5.79
+average_customer_rating,3.33
+open_tickets,5.0
+unresolved_tickets,5.0
+missing_resolution_times,2.0
+missing_customer_ratings,2.0
