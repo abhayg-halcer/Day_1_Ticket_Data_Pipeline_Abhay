@@ -5,7 +5,7 @@
 - **Developer:** Abhay Gour
 - **Assignment:** Day 01 — Python Engineering & Ticket Data Pipeline
 - **Date:** 2026-10-29
-- **Repository URL:** [Paste your GitHub repository URL]
+- **Repository URL:** https://github.com/abhayg-halcer/Day_1_Ticket_Data_Pipeline_Abhay.git
 - **Commit hash / Pull Request:** [Paste after committing and pushing]
 
 ## Objective
