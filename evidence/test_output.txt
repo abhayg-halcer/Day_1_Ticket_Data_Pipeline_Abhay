@@ -1,23 +1,24 @@
 ============================= test session starts ==============================
-platform darwin -- Python 3.15.2, pytest-8.4.2, pluggy-1.7.0 -- /Users/apple/Downloads/Day_1_Ticket_Data_Pipeline_RESUBMISSION/.venv/bin/python
+platform darwin -- Python 3.15.2, pytest-8.4.2, pluggy-1.7.0 -- /usr/local/bin/python3
 cachedir: .pytest_cache
 rootdir: /Users/apple/Downloads/Day_1_Ticket_Data_Pipeline_RESUBMISSION
-collecting ... collected 15 items
+collecting ... collected 16 items
 
 tests/test_analytics.py::test_summary_metrics_includes_missing_values_and_unresolved_statuses PASSED [  6%]
-tests/test_analytics.py::test_average_resolution_time_by_category PASSED [ 13%]
-tests/test_analytics.py::test_ticket_counts_by_category_includes_missing_category PASSED [ 20%]
-tests/test_analytics.py::test_unresolved_count_excludes_resolved_and_closed PASSED [ 26%]
-tests/test_analytics.py::test_export_results_writes_all_expected_csv_files PASSED [ 33%]
-tests/test_analytics.py::test_all_missing_resolution_values_return_none_overall_and_nan_by_category PASSED [ 40%]
-tests/test_data_processor.py::test_load_data_returns_dataframe_and_expected_rows PASSED [ 46%]
-tests/test_data_processor.py::test_load_data_missing_file_raises_file_not_found PASSED [ 53%]
-tests/test_data_processor.py::test_load_data_empty_file_raises_value_error PASSED [ 60%]
-tests/test_data_processor.py::test_load_data_header_only_file_raises_value_error PASSED [ 66%]
-tests/test_data_processor.py::test_validate_columns_rejects_missing_required_columns PASSED [ 73%]
-tests/test_data_processor.py::test_clean_data_removes_later_duplicate_and_keeps_first PASSED [ 80%]
-tests/test_data_processor.py::test_clean_data_does_not_modify_raw_dataframe PASSED [ 86%]
+tests/test_analytics.py::test_average_resolution_time_by_category PASSED [ 12%]
+tests/test_analytics.py::test_ticket_counts_by_category_includes_missing_category PASSED [ 18%]
+tests/test_analytics.py::test_unresolved_count_excludes_resolved_and_closed PASSED [ 25%]
+tests/test_analytics.py::test_export_results_writes_all_expected_csv_files PASSED [ 31%]
+tests/test_analytics.py::test_all_missing_resolution_values_return_none_overall_and_nan_by_category PASSED [ 37%]
+tests/test_analytics.py::test_unresolved_tickets_include_open_and_in_progress PASSED [ 43%]
+tests/test_data_processor.py::test_load_data_returns_dataframe_and_expected_rows PASSED [ 50%]
+tests/test_data_processor.py::test_load_data_missing_file_raises_file_not_found PASSED [ 56%]
+tests/test_data_processor.py::test_load_data_empty_file_raises_value_error PASSED [ 62%]
+tests/test_data_processor.py::test_load_data_header_only_file_raises_value_error PASSED [ 68%]
+tests/test_data_processor.py::test_validate_columns_rejects_missing_required_columns PASSED [ 75%]
+tests/test_data_processor.py::test_clean_data_removes_later_duplicate_and_keeps_first PASSED [ 81%]
+tests/test_data_processor.py::test_clean_data_does_not_modify_raw_dataframe PASSED [ 87%]
 tests/test_data_processor.py::test_clean_data_converts_invalid_numeric_values_and_flags_them PASSED [ 93%]
 tests/test_data_processor.py::test_clean_data_retains_and_flags_missing_ticket_id PASSED [100%]
 
-============================== 15 passed in 0.42s ==============================
+============================== 16 passed in 0.25s ==============================
