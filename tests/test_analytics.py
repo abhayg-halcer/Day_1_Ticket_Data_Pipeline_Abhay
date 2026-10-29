@@ -70,3 +70,20 @@ def test_all_missing_resolution_values_return_none_overall_and_nan_by_category()
     analytics = TicketAnalytics(df)
     assert analytics.summary_metrics()["average_resolution_time_hours"] is None
     assert analytics.average_resolution_time_by_category()["average_resolution_time_hours"].isna().all()
+
+
+def test_unresolved_tickets_include_open_and_in_progress():
+
+    df = pd.DataFrame({
+        "status": ["Open", "In Progress", "Resolved", "Closed"],
+        "resolution_time_hours": [None, None, 2.0, 3.0],
+        "customer_rating": [None, None, 4.0, 5.0],
+        "category": ["Billing", "Technical", "Billing", "Account"],
+        "priority": ["High", "Medium", "Low", "Low"],
+    })
+
+    analytics = TicketAnalytics(df)
+    result = analytics.summary_metrics()
+
+    assert result["unresolved_tickets"] == 2
+    assert result["open_tickets"] == 1
