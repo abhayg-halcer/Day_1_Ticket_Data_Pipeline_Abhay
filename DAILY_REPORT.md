@@ -26,7 +26,6 @@ Build a reproducible CSV data pipeline that validates and cleans support-ticket 
 - **Manual metric checks:** See `evidence/manual_metric_checks.md`.
 
 ## What I learned
-## What I learned
 
 I learned how to organize a Python project using separate modules for data processing and analytics, and how to test the pipeline using pytest. In the first submission, some required analytics and project structure were incomplete, and one test failed because missing resolution-time values were not handled correctly. I corrected the project structure, improved the category-wise average resolution-time calculation to handle missing values, and verified that all 15 tests passed successfully.
 
