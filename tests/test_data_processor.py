@@ -87,3 +87,38 @@ def test_clean_data_retains_and_flags_missing_ticket_id():
     assert len(cleaned) == 2
     assert processor.quality_report["missing_ticket_id_count"] == 1
     assert "missing_ticket_id" in processor.quality_issues["issue"].tolist()
+
+@pytest.mark.parametrize("invalid_value", ["inf", "-inf"])
+def test_clean_data_rejects_infinite_resolution_times(invalid_value):
+    processor = TicketDataProcessor("unused.csv")
+    raw = sample_df()
+    raw.loc[0, "resolution_time_hours"] = invalid_value
+
+    cleaned = processor.clean_data(raw)
+
+    assert pd.isna(cleaned.loc[0, "resolution_time_hours"])
+    assert processor.quality_report["invalid_resolution_time_count"] == 1
+    assert "invalid_resolution_time" in processor.quality_issues["issue"].tolist()
+
+
+def test_clean_data_keeps_finite_non_negative_resolution_time():
+    processor = TicketDataProcessor("unused.csv")
+    raw = sample_df()
+
+    cleaned = processor.clean_data(raw)
+
+    assert cleaned.loc[0, "resolution_time_hours"] == 4.5
+    assert cleaned.loc[1, "resolution_time_hours"] == 6.0
+    assert processor.quality_report["invalid_resolution_time_count"] == 0
+
+def test_load_data_malformed_csv_raises_value_error(tmp_path):
+    path = tmp_path / "malformed.csv"
+    path.write_text(
+        'ticket_id,category,priority\n'
+        '"T001,Billing,High\n'
+    )
+
+    processor = TicketDataProcessor(path)
+
+    with pytest.raises(ValueError, match="invalid structure"):
+        processor.load_data()

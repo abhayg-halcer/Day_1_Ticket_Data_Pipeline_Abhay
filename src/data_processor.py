@@ -2,7 +2,7 @@
 
 from pathlib import Path
 from typing import Any
-
+import numpy as np
 import pandas as pd
 
 
@@ -86,7 +86,13 @@ class TicketDataProcessor:
 
         invalid_resolution_mask = (
             (~resolution_missing & resolution_numeric.isna())
-            | (resolution_numeric.notna() & resolution_numeric.lt(0))
+            | (
+                resolution_numeric.notna()
+                & (
+                    ~np.isfinite(resolution_numeric)
+                    | resolution_numeric.lt(0)
+                )
+            )
         )
         invalid_rating_mask = (
             (~rating_missing & rating_numeric.isna())
